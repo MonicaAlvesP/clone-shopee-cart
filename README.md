@@ -78,7 +78,7 @@ npm run test:watch
 git clone https://github.com/MonicaAlvesP/clone-shopee-cart.git
 cd clone-shopee-cart
 npm install
-npm start
+npm run dev
 ```
 
 Para rodar os testes:
