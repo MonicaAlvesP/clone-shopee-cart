@@ -1,0 +1,26 @@
+{
+  "name": "clone-carrinho-shopee",
+  "version": "1.0.0",
+  "description": "Clone do carrinho de compras da Shopee",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "dev": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "Mônica Alves",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@jest/globals": "^30.0.4",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^30.0.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
