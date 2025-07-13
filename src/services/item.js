@@ -10,4 +10,18 @@ async function createItem(name, price, quantity) {
   }
 }
 
-export default createItem;
+async function addToItemInWishList(wishList, item) {
+  const existingItem = wishList.find(i => i.name === item.name);
+  if (existingItem) {
+    existingItem.quantity += item.quantity;
+  } else {
+    wishList.push(item);
+  }
+  console.log(`Item ${item.name} adicionado à lista de desejos.`);
+  return wishList;
+}
+
+export {
+  createItem,
+  addToItemInWishList
+}

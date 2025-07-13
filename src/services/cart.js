@@ -45,11 +45,53 @@ async function totalCartItems(userCart) {
   return result;
 }
 
+// -> adicionar item aos favoritos
+async function addToWishList(userWishList, item) {
+  const existingItem = userWishList.find(wishItem => wishItem.name === item.name)
+
+  if (existingItem) {
+    console.log(`${item.name} já está na lista de desejos`)
+    return
+  }
+
+  userWishList.push(item)
+  console.log(`❤️ ${item.name} foi adicionado aos favoritos!`)
+}
+
+// -> remover item dos favoritos
+async function removeFromWishList(userWishList, itemName) {
+  const index = userWishList.findIndex(item => item.name === itemName)
+
+  if (index !== -1) {
+    const removedItem = userWishList.splice(index, 1)[0]
+    console.log(`💔 ${removedItem.name} foi removido dos favoritos`)
+  } else {
+    console.log("Item não encontrado na lista de desejos")
+  }
+}
+
+// -> ver lista de desejos
+async function viewWishList(userWishList) {
+  console.log("❤️ Lista de Desejos:")
+
+  if (userWishList.length === 0) {
+    console.log("Lista de desejos vazia")
+    return
+  }
+
+  userWishList.forEach((item, index) => {
+    console.log(`${index + 1}. ${item.name} - R$ ${item.price}`)
+  })
+}
+
 
 export {
   addItemToCart,
   deleteItemFromCart,
   removeItemFromCart,
   viewCartItems,
-  totalCartItems
+  totalCartItems,
+  addToWishList,
+  removeFromWishList,
+  viewWishList
 }

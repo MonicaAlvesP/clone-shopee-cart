@@ -1,4 +1,4 @@
-import createItem from '../src/services/item.js'
+import { createItem } from '../src/services/item.js'
 
 describe('Testes do Serviço de Item', () => {
   test('deve criar um item com as propriedades corretas', async () => {

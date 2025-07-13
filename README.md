@@ -1,104 +1,88 @@
 # Clone do Carrinho de Compras da Shopee
 
-Projeto desenvolvido para replicar as funcionalidades básicas do carrinho de compras da Shopee, com cálculo automático de subtotais e gerenciamento de itens.
+Projeto para replicar as funcionalidades básicas do carrinho de compras da Shopee, incluindo cálculo automático de subtotais e gerenciamento de itens.
 
 ## Objetivo
 
 Criar um sistema de carrinho de compras funcional que permita:
 
-- Adicionar itens ao carrinho
-- Remover itens do carrinho
-- Calcular subtotais automaticamente
+- Adicionar e remover itens
+- Calcular subtotais e total geral automaticamente
 - Gerenciar quantidades de produtos
-- Exibir o total geral do carrinho
 
 ## 🔧 Tecnologias Utilizadas
 
-- **JavaScript ES6+**: Linguagem principal
-- **Node.js**: Ambiente de execução
-- **ES Modules**: Sistema de módulos
-- **Async/Await**: Programação assíncrona
-- **Jest**: Framework de testes
+- **JavaScript ES6+**
+- **Node.js**
+- **ES Modules**
+- **Async/Await**
+- **Jest**
 
 ### Entidades
 
-- **Carrinho (`cart.js`)**: Responsável por todas as operações do carrinho
-- **Itens (`item.js`)**: Responsável pela criação e estrutura dos produtos
+- **Carrinho (`cart.js`)**: Operações do carrinho
+- **Itens (`item.js`)**: Estrutura dos produtos
 
-## Funcionalidades Implementadas
+## ⚙️ Funcionalidades
 
-### Gerenciamento do Carrinho (`cart.js`)
+### 🛒 Carrinho (`cart.js`)
 
-- `addItemToCart()` - Adiciona item ao carrinho
-- `deleteItemFromCart()` - Remove item completamente do carrinho por nome
-- `removeItemFromCart()` - Remove uma unidade ou item completo baseado na quantidade
-- `viewCartItems()` - Exibe todos os itens do carrinho formatados
-- `totalCartItems()` - Calcula e exibe o valor total do carrinho
-- `clearCart()` - Limpa todo o carrinho (a implementar)
+- `addItemToCart()` - Adiciona item
+- `deleteItemFromCart()` - Remove item por nome
+- `removeItemFromCart()` - Remove unidade ou item completo
+- `viewCartItems()` - Exibe itens formatados
+- `totalCartItems()` - Calcula valor total
 
-### Criação de Itens (`item.js`)
+### ❤️ Lista de Desejos
 
-- `createItem()` - Cria um novo produto com:
-  - Nome do produto
-  - Preço unitário
-  - Quantidade
-  - Função `subtotal()` para cálculo automático
+- `addToWishList()` - Adiciona aos favoritos
+- `removeFromWishList()` - Remove dos favoritos
+- `viewWishList()` - Exibe itens da lista
+
+### 📦 Itens (`item.js`)
+
+- `createItem()` - Cria produto com nome, preço, quantidade e função `subtotal()`
 
 ## 🧪 Testes
 
-O projeto inclui testes automatizados para garantir a qualidade do código:
-
-### Estrutura de Testes
+O projeto inclui testes automatizados para garantir a qualidade do código.
 
 ```
 tests/
-├── item.test.js    # Testes para criação de itens
-└── cart.test.js    # Testes para operações do carrinho
+├── item.test.js    # Teste de criação de itens
+└── cart.test.js    # Testes das principais funcionalidades
 ```
 
-### Cobertura de Testes
-
-- ✅ Criação de itens com propriedades corretas
-- ✅ Adição de itens ao carrinho
-- ✅ Remoção de itens do carrinho
-- ✅ Exclusão de itens por nome
-- ✅ Cálculo do total do carrinho
-- ✅ Exibição de itens do carrinho
+- Criação de itens com propriedades corretas
+- Operações do carrinho (adicionar, remover, deletar)
+- Cálculo do total do carrinho
+- Gerenciamento da lista de desejos
 
 ### Executar Testes
 
 ```bash
-# Rodar todos os testes
 npm test
-
-# Rodar testes em modo watch
 npm run test:watch
 ```
 
-## Como Executar
+## 🚀 Como Executar
 
 ### Pré-requisitos
 
-- Node.js instalado
+- Node.js (16+)
 - NPM ou Yarn
 
 ### Instalação e Execução
 
-1. Clone o repositório:
-
 ```bash
 git clone https://github.com/MonicaAlvesP/clone-shopee-cart.git
 cd clone-shopee-cart
-```
-
-2. Instale as dependências:
-
-```bash
 npm install
+npm start
 ```
 
-3. Execute o projeto:
+Para rodar os testes:
 
 ```bash
-npm run dev
+npm test
 ```
